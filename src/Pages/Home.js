@@ -1,7 +1,9 @@
 import { Button, Grid, TextField } from '@mui/material'
 import React,{useState} from 'react'
 import Navbar from '../Components/Navbar'
-import firstimg from '../assets/first.png'
+import firstimg from '../assets/first.jpg'
+import h1 from '../assets/1h.jpg'
+import h2 from '../assets/2h.jpg'
 import firstimg1 from '../assets/akkk.jpg'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -27,7 +29,9 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useStyles } from './PackagePages/HoverCss';
 import { HoverableCard } from 'react-hoverable-card'
 import 'react-hoverable-card/dist/index.css'
-
+import ImageContentHover from 'react-image-hover';
+import { useEffect } from 'react'
+import hoverEffect from "hover-effect";
 const services = [
    {
      name: 'Website Design',
@@ -134,11 +138,39 @@ const Home = () => {
   const  classes=useStyles()
 
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.up('sm'));
+  const matches = useMediaQuery(theme.breakpoints.up('md'));
+  const container = useRef();
+  
+  useEffect(() => {
+    console.log(container.current);
 
+    new hoverEffect({
+      parent: container.current,
+      intensity: 0.5,
+      image1: h1,
+      image2:h2,
+      displacementImage:
+        "https://raw.githubusercontent.com/robin-dela/hover-effect/master/images/fluid.jpg"
+    });
+  },[container])
+
+ 
+  
+const Hover=()=>{
+  return(
+     new hoverEffect({
+      parent: document.querySelector('.my-div'),
+      intensity: 0.3,
+      image1: 'images/myImage1.jpg',
+      image2: 'images/myImage2.jpg',
+      displacementImage: 'images/myDistorsionImage.png'
+  })
+  )
+}
+ 
   const handleChange = (event) => {
     setService(event.target.value);
-  };
+  }
 
 
   const sendEmail = (e) => {
@@ -238,7 +270,7 @@ return( Projects.map((item)=>{
  
 )
      }
-   
+     
      
 
   return (
@@ -251,7 +283,7 @@ return( Projects.map((item)=>{
 
 {/* 1st Section */}
    
-   <Grid container spacing={2} style={{marginTop:0,display:'flex',justifyContent:'space-around',backgroundImage:`url(${firstimg1})`,backgroundRepeat:'no-repeat',backgroundSize:'cover'}}>  
+   <Grid container spacing={2} style={{marginTop:1,display:'flex',justifyContent:'space-around'}}>  
       {/* <Grid item xs={12} md={5} style={{width:'40vw',marginTop:matches?60:0}}>
       <Grid  style={{fontSize:72,color:'#ffff00',marginTop:matches?15:0,marginBottom:20,display:'block'}} className="font-link">
        Responsive
@@ -264,9 +296,10 @@ return( Projects.map((item)=>{
     </Grid>
     
     </Grid> */}
-    <Grid style={{background:'rgb(128,128,128,0.6)',height:'100vh',width:'100vw',position:'relative'}}>
-    <Grid  style={{marginTop:matches?60:0,}}>
-      <Grid  style={{fontSize:72,color:'#000',marginTop:matches?15:0,marginBottom:20,textAlign:'center'}} className="font-link">
+    <Grid  xs={12} md={6} style={{backgroundImage:`url(${firstimg})`,paddingLeft:16,backgroundRepeat:'no-repeat',backgroundSize:'cover'}}>
+    <Grid  style={{background:'rgb(128,128,128,0.6)',height:'100%',display:'flex',alignItems:"center",flexDirection:'column'}}>
+    
+      <Grid  style={{fontSize:72,color:'#000',textAlign:'center'}} className="font-link">
        Responsive
        <Grid style={{fontWeight:'bold',color:'#FECA04',fontSize:matches?72:55}} >
         Website Design
@@ -275,10 +308,22 @@ return( Projects.map((item)=>{
     <Grid style={{color:'#1a1b1e',fontSize:20,textAlign:'center'}} className="font-link">
     Building dream website with great expertise and extreme extensive experience for the best mobile and desktop experience
     </Grid>
-    
+   
     </Grid>
     </Grid>
     
+    
+    <Grid xs={12}  md={6} >
+    <Grid 
+    className="parent"
+        id="imgContainer"
+        ref={container}
+        style={{
+          width:matches?767:"",
+          height: 600
+        }}
+      ></Grid>
+    </Grid>
    
 {/*    
     <Grid item md={5} style={{width:'40vw',height:460,display:'flex',justifyContent:'center'}}>
