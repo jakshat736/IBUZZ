@@ -32,7 +32,7 @@ const Contactus = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_unv208h', 'template_kr0cfbf',form.current,'5jpqFVv9N8rs8tCYs')
+    emailjs.sendForm('service_unv208h', 'template_kr0cfbf',form.current,'1rCUr7Z2LjPTR3vSL')
       .then((result) => {
           console.log(result.p);
       }, (error) => {
@@ -48,12 +48,12 @@ const Contactus = () => {
          <Grid container spacing={2}>
       <Grid item xs={12} md={12}><Navbar/></Grid>
       </Grid>
-
+{/* 
       <Grid container spacing={2}>  
     <Grid item xs={2} md={12}>
        <img src={require('../assets/contactus.png')} style={{width:'98.92vw'}}/>
     </Grid>
-  </Grid>
+  </Grid> */}
      
 
   <Grid container spacing={2}  style={{display:'flex',flexDirection:'row',justifyContent:'center',width:'100%',marginTop:25}} className="font-link">

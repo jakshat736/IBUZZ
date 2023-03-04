@@ -10,12 +10,12 @@ const Aboutus = () => {
       <Grid container spacing={2}>
       <Grid item xs={12} md={12}><Navbar/></Grid>
       </Grid>
- 
+{/*  
     <Grid container spacing={2}>  
     <Grid item xs={2} md={12}>
        <img src={require('../assets/aboutus.png')} style={{width:'98.92vw'}}/>
     </Grid>
-  </Grid>
+  </Grid> */}
   <Grid container spacing={2} justifyContent={"space-around"} className="font-link">
   <Grid item xs={12} md={3}>
        <img src={require('../assets/about.png')} style={{width:280}} className={classes.hover}/>
