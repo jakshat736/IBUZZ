@@ -62,7 +62,7 @@ const menuItemsData = {
             {
               label: "Option 1",
               callback: () => console.log("Export > FT1 > O1 clicked"),
-              sx: { color: "#FF0000" },
+              sx: { color: "#FFfff0" },
             },
             {
               label: "Option 2",
@@ -170,14 +170,15 @@ function Navbar() {
   return (
     <AppBar
       position="sticky"
-      style={{ background: "rgb(128,128,128,0.2)", width: "100%", top: 0 }}
+      style={{          backgroundImage:'linear-gradient(to right,#513eff, #52e5ff)', width: "100%",boxShadow:0,color:'transparent' }}
       className="font-link"
+      elevation={0}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <img src={myImage} style={{ width: 100 }} />
           <Typography
-            variant="h6"
+            variant="h3"
             noWrap
             component="a"
             href="/"
@@ -186,8 +187,9 @@ function Navbar() {
               display: { xs: "none", md: "flex" },
               fontWeight: "bold",
               letterSpacing: ".3rem",
-              color: "#000",
+              color: "#fff",
               textDecoration: "none",
+              textShadow:'5px 5px rgb(96,96,96,0.5)'
             }}
             className="font-link"
           >
@@ -206,7 +208,7 @@ function Navbar() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="#000"
+              color="#fff"
             >
               <MenuIcon />
             </IconButton>
@@ -245,8 +247,10 @@ function Navbar() {
               <MenuItem onClick={handleServicesOpen}>
                 <Typography textAlign="center">Services</Typography>
               </MenuItem>
-              <MenuItem onClick={handlePackagesOpen}>
-                <Typography textAlign="center">Packages</Typography>
+              <MenuItem onClick={() => {
+                  navigate("/portfolio");
+                }}>
+                <Typography textAlign="center">Portfolio</Typography>
               </MenuItem>
               <MenuItem
                 onClick={() => {
@@ -268,7 +272,7 @@ function Navbar() {
               onClick={() => {
                 navigate("/home");
               }}
-              sx={{ my: 2, color: "black", display: "block" }}
+              sx={{ my: 2, color: "#fff", display: "block",fontSize:20 }}
             >
               Home
             </Button>
@@ -276,7 +280,7 @@ function Navbar() {
               onClick={() => {
                 navigate("/aboutus");
               }}
-              sx={{ my: 2, color: "black", display: "block" }}
+              sx={{ my: 2, color: "#fff", display: "block",fontSize:20 }}
             >
               About Us
             </Button>
@@ -285,7 +289,7 @@ function Navbar() {
               // aria-haspopup="true"
               // onClick={handleServicesOpen}
               // onMouseOver={handleServicesOpen}
-              // sx={{ my: 2, color: "black" }}
+              // sx={{ my: 2, color: "#fff" }}
               ref={anchorRef}
               id="composition-button"
               aria-controls={open ? 'composition-menu' : undefined}
@@ -293,7 +297,7 @@ function Navbar() {
               aria-haspopup="true"
               onMouseEnter={handleToggle}
               onMouseLeave={handleToggle}
-              style={{color:'#000'}}
+              style={{color:'#fff',fontSize:20,textDecoration:'none'}}
             >
               Services
 
@@ -404,7 +408,7 @@ function Navbar() {
             </Grow>
           )}
         </Popper>            </Button>
-            {/* <ClickAwayListener onMouseAway={handleServicesClose}>
+          
             <Menu
               id="simple-menu"
               anchorEl={anchorElServicesMenu}
@@ -491,13 +495,12 @@ function Navbar() {
                 Custom Software Development
               </MenuItem>
             </Menu>
-            </ClickAwayListener> */}
             {/* <Button
         aria-owns={anchorElPackagesMenu ? "simple-menu" : undefined}
         aria-haspopup="true"
         onClick={handlePackagesOpen}
         onMouseOver={handlePackagesOpen}
-        sx={{ my: 2, color: 'black', display: 'block' }}
+        sx={{ my: 2, color: '#fff', display: 'block' }}
       >
         Packages
       </Button>
@@ -542,7 +545,7 @@ function Navbar() {
               onClick={() => {
                 navigate("/portfolio");
               }}
-              sx={{ my: 2, color: "black", display: "block" }}
+              sx={{ my: 2, color: "#fff",fontSize:20, display: "block" }}
             >
               Portfolio
             </Button>
@@ -550,7 +553,7 @@ function Navbar() {
               onClick={() => {
                 navigate("/contactus");
               }}
-              sx={{ my: 2, color: "black", display: "block" }}
+              sx={{ my: 2, color: "#fff",fontSize:20, display: "block" }}
             >
               Contact Us
             </Button>
@@ -561,12 +564,12 @@ function Navbar() {
                 xs: "none",
                 md: "flex",
                 justifyContent: "flex-end",
-                color: "black",
+                color: "#fff",
                 animation: "backwards",
               },
             }}
           >
-            <CallIcon sx={{ color: "black" }} />
+            <CallIcon sx={{ color: "#fff" }} />
             +918889430333
           </Box>
         </Toolbar>

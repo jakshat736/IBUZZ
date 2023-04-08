@@ -19,6 +19,10 @@ import { BrandingWatermark } from '@mui/icons-material';
 import ContentMarketing from './Pages/ServicePages/ContentMarketing';
 import GoogleAds from './Pages/ServicePages/GoogleAds';
 import Portfolio from './Pages/Portfolio';
+import ChandanJwellers from './Digital cards/ChandanJwellers/ChandanJwellers';
+import VerticalCarousel from './Pages/Carasoul';
+import Ratiram from './Digital cards/Ratiram/Ratiram';
+import GehnaJwellers from './Digital cards/GehnaJwellers/GehnaJwellers';
 function App() {
   return (
   <div>
@@ -42,6 +46,10 @@ function App() {
               <Route element={<Branding/>} path="/branding" />
               <Route element={<GoogleAds/>} path="/googleads" />
               <Route element={<Portfolio/>} path="/portfolio" />
+              <Route element={<ChandanJwellers/>} path="/chandanjwellers" />
+              <Route element={<VerticalCarousel/>} path="/carasoul" />
+              <Route element={<Ratiram/>} path="/ratiramgajakbhandar" />
+              <Route element={<GehnaJwellers/>} path="/gehnajeweller" />
               </Routes>
               </Router>
   </div>

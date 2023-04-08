@@ -209,6 +209,13 @@ const Home = () => {
         }
       );
   };
+
+  useEffect(()=>{
+    window.otpless=(otplessUser)=>{
+      const waName=otplessUser.waName;
+      const waNumber=otplessUser.waNumber;
+    };
+  },[])
   const CardComponent = () => {
     return services.map((u, i) => {
       return (
@@ -332,20 +339,30 @@ const Home = () => {
  
 
   const ProjectComponents = () => {
-    return Projects.map((item) => {
-      return (
-        <Grid style={{ width: matches ? "20%" : "80%" }}>
-          <HoverableCard
-            cardTitle={item.name}
-            // cardDescription="Phasellus tincidunt vestibulum elit vel laoreet. Vivamus tincidunt augue eget lacus blandit tempor."
-            cardImage={item.avatar}
-            hoverBgColor="grey"
-          />
-        </Grid>
-      );
-    });
+    return(
+      Projects.map((project, index) => {
+        return (
+          <Grid item xs={10} md={3.2} style={{}}>
+          <div className="proj-imgbx">
+        <img src={project.avatar} />
+        <div className="proj-txtx">
+          <h4>{project.name}</h4>
+          
+        </div>
+      </div>
+      </Grid>
+        )
+      })
+    )
   };
- 
+
+
+  window.googleTranslateElementInit = () => {
+    new window.google.translate.TranslateElement(
+      { pageLanguage: 'en' },
+      'google_translate_element'
+    );
+  }
   return (
     <Grid>
       {/* Header */}
@@ -361,9 +378,11 @@ const Home = () => {
         container
         spacing={2}
         style={{
-          marginTop: 1,
+          
           display: "flex",
           justifyContent: "space-around",
+          backgroundImage:'linear-gradient(to right,#513eff, #52e5ff)',
+          minHeight:750
         }}
       >
         {/* <Grid item xs={12} md={5} style={{width:'40vw',marginTop:matches?60:0}}>
@@ -378,11 +397,12 @@ const Home = () => {
     </Grid>
     
     </Grid> */}
+
         <Grid
           xs={12}
           md={6}
           style={{
-            backgroundImage: `url(${firstimg})`,
+            // backgroundImage: `url(${firstimg})`,
             paddingLeft: 16,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
@@ -390,7 +410,7 @@ const Home = () => {
         >
           <Grid
             style={{
-              background: "rgb(128,128,128,0.8)",
+             // background: "rgb(128,128,128,0.8)",
               height: "100%",
               display: "flex",
               alignItems: "center",
@@ -406,7 +426,7 @@ const Home = () => {
               <Grid
                 style={{
                   fontWeight: "bold",
-                  color: "#043f77",
+                  color: "#fff",
                   fontSize: matches ? 72 : 55,
                 }}
               >
@@ -415,16 +435,17 @@ const Home = () => {
               </Grid>
             </Grid>
             <Grid
-              style={{ color: "#9cbccb", fontSize: 20, textAlign: "center" }}
+              style={{ color: "#fff", fontSize: 20, textAlign: "center" }}
               className="font-link"
             >
               Building dream website with great expertise and extreme extensive
               experience for the best mobile and desktop experience
+              
             </Grid>
           </Grid>
         </Grid>
 
-        <Grid xs={12} md={6}>
+        {/* <Grid xs={12} md={6}>
           <Grid
             className="parent"
             id="imgContainer"
@@ -434,7 +455,7 @@ const Home = () => {
               height: 600,
             }}
           ></Grid>
-        </Grid>
+        </Grid> */}
 
         {/*    
     <Grid item md={5} style={{width:'40vw',height:460,display:'flex',justifyContent:'center'}}>
@@ -474,7 +495,6 @@ const Home = () => {
             textAlign: "center",
           }}
         >
-          What We Offer________
         </Grid>
         <Grid
           item
@@ -507,11 +527,13 @@ const Home = () => {
           xs={12}
           md={12}
           style={{
-            color: "#525252",
+            color: "#2c46a6",
             paddingRight: matches ? 110 : 0,
             paddingLeft: matches ? 110 : 30,
-            fontSize: matches ? 20 : 24,
-            textAlign:'justify'
+            fontSize: matches ? 22.9 : 24,
+            textAlign:'justify',
+  
+            
           }}
         >
           We provide customized software and digital marketing solutions for
@@ -574,7 +596,7 @@ const Home = () => {
           spacing={2}
           style={{
             width: "70%",
-            background: "#2966be",
+            backgroundImage:'linear-gradient(to right,#513eff, #52e5ff)',
             borderRadius: 5,
             display: "flex",
             flexDirection: "row",
@@ -656,7 +678,6 @@ const Home = () => {
             textAlign: "center",
           }}
         >
-          About Us________
         </Grid>
         <Grid
           item
@@ -671,17 +692,11 @@ const Home = () => {
         >
           Grow Your Business With Our Agency
         </Grid>
-        <Grid item xs={12} md={5} style={{ display: "flex" }}>
-          <img
-            src={require("../assets/growyourbusiness.png")}
-            style={{ width: "100%" }}
-            className={classes.hover}
-          />
-        </Grid>
+       
         <Grid
           item
           xs={12}
-          md={6}
+         
           style={{ display: "flex", flexDirection: "column", margin: 7 }}
         >
           <Grid
@@ -698,7 +713,7 @@ const Home = () => {
             developing, and implementing top-quality websites and mobile
             software solutions tailored to your specific requirements.{" "}
           </Grid>
-          <Grid
+          {/* <Grid
             style={{
               color: "#525252",
               paddingRight: matches ? 110 : 0,
@@ -715,7 +730,7 @@ const Home = () => {
             complete software and digital marketing solutions, we cater to your
             unique requirements and deliver innovative solutions that are ahead
             of the curve.{" "}
-          </Grid>
+          </Grid> */}
         </Grid>
       </Grid>
 
@@ -734,12 +749,12 @@ const Home = () => {
               textAlign: "center",
             }}
           >
-            Our Projects________
+           
           </Grid>
           <Grid
             style={{
               color: "#2966be",
-              fontSize: 35,
+              fontSize: matches ? 50 : 35,
               textAlign: "center",
               fontWeight: "bold",
             }}
@@ -749,9 +764,12 @@ const Home = () => {
         </Grid>
 
         <Grid
+        container spacing={2}
           style={{
             display: "flex",
             flexDirection: matches ? "row" : "column",
+            
+            flexWrap:'wrap',
             justifyContent: "center",
             alignItems: "center",
           }}
@@ -771,12 +789,12 @@ const Home = () => {
             textAlign: "center",
           }}
         >
-          Our Qualities________
+
         </Grid>
         <Grid
           style={{
             color: "#2966be",
-            fontSize: 35,
+            fontSize: matches ? 50 : 35,
             textAlign: "center",
             fontWeight: "bold",
           }}
@@ -818,12 +836,12 @@ const Home = () => {
               textAlign: "center",
             }}
           >
-            FAQ_____
           </Grid>
           <Grid
             style={{
               color: "#2966be",
-              fontSize: 35,
+              fontSize: matches ? 50 : 35,
+
               textAlign: "center",
               fontWeight: "bold",
             }}
@@ -873,7 +891,7 @@ const Home = () => {
           }}
         >
           <Grid style={{ color: "#000", fontSize: 20, fontWeight: "bold" }}>
-            We Make Connections
+            
           </Grid>
           <Grid style={{ color: "#2966be", fontSize: 45 }}>
             Tell us about your project
@@ -993,8 +1011,8 @@ const Home = () => {
                     type="submit"
                     size="large"
                     style={{
-                      background: "linear-gradient(to right,#ff2500,#ff7100)",
-                      boxShadow: "0 0 0 6px rgb(255,113,0,0.25)",
+                      background: "linear-gradient(to right,#043f77, #9cbccb)",
+                     // boxShadow: "0 0 0 6px grey",
                     }}
                   >
                     Submit
@@ -1016,7 +1034,7 @@ const Home = () => {
           }}
         >
           <Grid style={{ color: "#000", fontSize: 20, fontWeight: "bold" }}>
-            GET IN TOUCH
+            
           </Grid>
 
           <Grid style={{ color: "#2966be", fontSize: 45 }}>

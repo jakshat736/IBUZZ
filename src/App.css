@@ -38,7 +38,13 @@ font-family: 'Livvic', sans-serif;
     url("./font/Oswald-VariableFont_wght.ttf") format("truetype");
 }
 .font-link{
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Overpass', sans-serif;
+}
+.font-link1{
+  font-family: 'Karma', serif;
+}
+.font-link2{
+  font-family: 'Domine', serif;
 }
 
 @keyframes App-logo-spin {
@@ -48,4 +54,68 @@ font-family: 'Livvic', sans-serif;
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.proj-imgbx {
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+.proj-imgbx::before {
+  content: "";
+  background: linear-gradient(90.21deg, #513eff -5.91%, #52e5ff 111.58%);
+  opacity: 0.85;
+  position: absolute;
+  width: 100%;
+  height: 0;
+  transition: 0.4s ease-in-out;
+}
+.proj-imgbx:hover::before {
+  height: 100%;
+}
+.proj-txtx {
+  position: absolute;
+  text-align: center;
+  color:#fff;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+  width: 100%;
+}
+.proj-imgbx:hover .proj-txtx {
+  top: 50%;
+  opacity: 1;
+}
+.proj-txtx h4 {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 1.1em;
+}
+.proj-txtx span {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 0.8px;
+}
+
+.visit-count {
+  position: fixed;
+  z-index: 1;
+   bottom: 10px;
+  right: 1%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  font-size: 14px;
 }

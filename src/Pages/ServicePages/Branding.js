@@ -215,7 +215,7 @@ const Branding = () => {
           marginTop: matches ? 1 : 0,
           display: "flex",
           justifyContent: "space-around",
-          background: "#2966be",
+          backgroundImage:'linear-gradient(to right,#513eff, #52e5ff)'
         }}
         className="font-link"
       >
@@ -264,7 +264,6 @@ const Branding = () => {
                 background: "#fff",
                 color: "#2966be",
                 border: "solid",
-                borderColor: "#000",
               }}
               href="https://wa.link/clvo86"
             >
@@ -292,6 +291,7 @@ const Branding = () => {
               paddingTop: 10,
               paddingLeft: 20,
               paddingRight: 20,
+              boxShadow:'7px 7px 	rgb(220,220,220,0.5)'
             }}
           >
             <Grid
@@ -434,10 +434,10 @@ const Branding = () => {
         </Link>
 
         <Link to="/branding" className={classes.link}>
-        <MenuItem sx={{border:1,borderWidth:5,marginTop:3,borderColor:'#9cbccb'}} >
-          <ListItemText style={{color:'#000'}}>Branding</ListItemText>
+        <MenuItem sx={{border:1,borderWidth:5,marginTop:3,borderColor:'#9cbccb',backgroundImage:'linear-gradient(to right,#513eff, #52e5ff)'}} >
+          <ListItemText style={{color:'#fff'}}>Branding</ListItemText>
           <ListItemIcon >
-            <ArrowRightAltIcon style={{color:'#2966be'}} fontSize="large"/>
+            <ArrowRightAltIcon style={{color:'#fff'}} fontSize="large"/>
           </ListItemIcon>
           
         </MenuItem>
@@ -668,7 +668,8 @@ const Branding = () => {
               width: "70%",
               border: 1,
               borderRadius: 20,
-              background: "#2966be",
+              backgroundImage:'linear-gradient(to right,#513eff, #52e5ff)',
+              boxShadow:'7px 7px 	rgb(220,220,220,0.5)'
             }}
           >
             <Grid item xs={12} md={8} style={{ padding: 35 }}>
@@ -922,29 +923,29 @@ const Branding = () => {
                 </Grid>
               </Grid>
               <Grid
-                item
-                xs={12}
-                md={7}
-                style={{
-                  padding: 30,
-                  background: "#2966be",
-                  borderRadius: 10,
-                  display: "flex",
-                  justifyContent: "center",
-                  flexDirection: "column",
-                  alignItems: "center",
-                }}
-              >
-                <Grid style={{ fontSize: 27, color: "#fff" }}>
-                  Get in Touch for Assistance
-                </Grid>
-                <Grid style={{ fontSize: 24, color: "#fff" }}>
-                  Call Us at +91-8889430333
-                </Grid>
-                <Grid style={{ fontSize: 22, color: "#fff" }}>
-                  Don't hesitate, Request a Quote Today!
-                </Grid>
-              </Grid>
+                    item
+                    xs={12}
+                    md={7}
+                    style={{
+                      padding: 30,
+                      borderRadius: 10,
+                      display: "flex",
+                      justifyContent: "center",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      backgroundImage:'linear-gradient(to right,#513eff, #52e5ff)'
+                    }}
+                  >
+                    <Grid style={{ fontSize: 27, color: "#fff" }}>
+                      Get in Touch for Assistance
+                    </Grid>
+                    <Grid style={{ fontSize: 24, color: "#fff",marginTop:10 }}>
+                      Call Us at +91-8889430333
+                    </Grid>
+                    <Grid style={{ fontSize: 22, color: "#fff",marginTop:10 }}>
+                      Don't hesitate, Request a Quote Today!
+                    </Grid>
+                  </Grid>
             </Grid>
           </Grid>
         </Grid>
